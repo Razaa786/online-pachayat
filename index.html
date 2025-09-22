@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online Panchayat</title>
+    <meta name="description" content="Online Panchayat platform for citizen services, grievances, and announcements." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand__logo" aria-hidden="true">🏛️</span>
+          <span class="brand__name">Online Panchayat</span>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+          <ul id="nav-menu" class="nav__menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#grievance">Grievance</a></li>
+            <li><a href="#announcements">Announcements</a></li>
+            <li><a href="#schedule">Meetings</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#case-status">Case Status</a></li>
+          </ul>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 id="hero-title">Empowering Villages, Digitally</h1>
+            <p>Access panchayat services, submit grievances, and stay informed—anytime, anywhere.</p>
+            <div class="hero__actions">
+              <a href="#grievance" class="btn btn--primary">Submit Grievance</a>
+              <a href="#services" class="btn btn--ghost">Explore Services</a>
+            </div>
+          </div>
+          <div class="hero__visual" aria-hidden="true">
+            <div class="orb orb--one"></div>
+            <div class="orb orb--two"></div>
+            <div class="orb orb--three"></div>
+          </div>
+        </div>
+        <div class="hero__wave" aria-hidden="true"></div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="section" aria-labelledby="services-title">
+        <div class="container">
+          <h2 id="services-title" class="section__title">Citizen Services</h2>
+          <div class="grid services-grid">
+            <a class="card reveal" href="#" aria-label="Certificate Issuance">
+              <div class="card__icon">📄</div>
+              <div class="card__title">Certificate Issuance</div>
+              <p class="card__desc">Birth, death, residence, income certificates and more.</p>
+            </a>
+            <a class="card reveal" href="#" aria-label="Schemes & Benefits">
+              <div class="card__icon">🎯</div>
+              <div class="card__title">Schemes & Benefits</div>
+              <p class="card__desc">Check eligibility and apply for government schemes.</p>
+            </a>
+            <a class="card reveal" href="#" aria-label="Property Tax">
+              <div class="card__icon">🏠</div>
+              <div class="card__title">Property Tax</div>
+              <p class="card__desc">View dues and pay securely online.</p>
+            </a>
+            <a class="card reveal" href="#" aria-label="Water & Sanitation">
+              <div class="card__icon">🚰</div>
+              <div class="card__title">Water & Sanitation</div>
+              <p class="card__desc">Request connections, repairs, and track service.</p>
+            </a>
+            <a class="card reveal" href="#" aria-label="Public Works">
+              <div class="card__icon">🛣️</div>
+              <div class="card__title">Public Works</div>
+              <p class="card__desc">Roads, lighting, drainage maintenance requests.</p>
+            </a>
+            <a class="card reveal" href="#" aria-label="RTI Requests">
+              <div class="card__icon">📬</div>
+              <div class="card__title">RTI Requests</div>
+              <p class="card__desc">Submit and track Right to Information requests.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grievance Form -->
+      <section id="grievance" class="section section--alt" aria-labelledby="grievance-title">
+        <div class="container">
+          <h2 id="grievance-title" class="section__title">Submit a Grievance</h2>
+          <form id="grievanceForm" class="form card reveal" novalidate>
+            <div class="form__row">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter your full name" required />
+              <span class="form__error" id="err-name"></span>
+            </div>
+            <div class="form__row">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="10-digit phone number" required />
+              <span class="form__error" id="err-phone"></span>
+            </div>
+            <div class="form__row">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option>Water Supply</option>
+                <option>Sanitation</option>
+                <option>Roads</option>
+                <option>Street Lights</option>
+                <option>Welfare Scheme</option>
+              </select>
+              <span class="form__error" id="err-category"></span>
+            </div>
+            <div class="form__row">
+              <label for="details">Details</label>
+              <textarea id="details" name="details" rows="4" placeholder="Describe your grievance" required></textarea>
+              <span class="form__error" id="err-details"></span>
+            </div>
+            <div class="form__actions">
+              <button type="submit" class="btn btn--primary">Submit</button>
+              <button type="reset" class="btn btn--ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Announcements -->
+      <section id="announcements" class="section" aria-labelledby="announcements-title">
+        <div class="container">
+          <h2 id="announcements-title" class="section__title">Announcements</h2>
+          <div class="ticker reveal" role="region" aria-live="polite">
+            <div class="ticker__track">
+              <span>Water supply maintenance on 25th Sep, 10 AM - 2 PM.</span>
+              <span>Gram Sabha meeting scheduled on 30th Sep, 5 PM.</span>
+              <span>New scholarship applications open until 15th Oct.</span>
+              <span>Road repair in Ward 3 from 28th Sep.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Schedule & Members -->
+      <section id="schedule" class="section section--alt" aria-labelledby="schedule-title">
+        <div class="container">
+          <h2 id="schedule-title" class="section__title">Meeting Schedule</h2>
+          <div class="grid two-col">
+            <div class="card reveal">
+              <div class="card__title">Upcoming Meetings</div>
+              <ul class="list list--timeline">
+                <li>
+                  <span class="list__title">Gram Sabha</span>
+                  <span class="list__meta">30 Sep, 5:00 PM • Community Hall</span>
+                </li>
+                <li>
+                  <span class="list__title">Water Committee</span>
+                  <span class="list__meta">02 Oct, 11:00 AM • Office Room 2</span>
+                </li>
+                <li>
+                  <span class="list__title">Education Board</span>
+                  <span class="list__meta">07 Oct, 3:00 PM • Primary School</span>
+                </li>
+              </ul>
+            </div>
+            <div id="members" class="card reveal">
+              <div class="card__title">Panchayat Members</div>
+              <ul class="members">
+                <li>
+                  <span class="avatar" aria-hidden="true">👩🏽‍💼</span>
+                  <div>
+                    <div class="members__name">Saraswati Devi</div>
+                    <div class="members__role">Sarpanch</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="avatar" aria-hidden="true">👨🏽‍💼</span>
+                  <div>
+                    <div class="members__name">Ramesh Patel</div>
+                    <div class="members__role">Up-Sarpanch</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="avatar" aria-hidden="true">👩🏽‍💻</span>
+                  <div>
+                    <div class="members__name">Priya Nair</div>
+                    <div class="members__role">Secretary</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Status -->
+      <section id="case-status" class="section" aria-labelledby="status-title">
+        <div class="container">
+          <h2 id="status-title" class="section__title">Case Status Lookup</h2>
+          <div class="card reveal">
+            <div class="form__row">
+              <label for="caseId">Enter Case ID</label>
+              <input id="caseId" type="text" placeholder="e.g., GZB-2025-00421" />
+            </div>
+            <div class="form__actions">
+              <button id="lookupBtn" class="btn btn--primary" type="button">Lookup</button>
+            </div>
+            <div id="caseResult" class="case-result" hidden>
+              <div class="badge">In Progress</div>
+              <div class="case-result__title">Road Repair Request - Ward 3</div>
+              <div class="case-result__meta">Last updated: <span id="caseUpdated">—</span></div>
+              <div class="progress">
+                <div class="progress__bar" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand brand--sm">
+            <span class="brand__logo" aria-hidden="true">🏛️</span>
+            <span class="brand__name">Online Panchayat</span>
+          </div>
+          <p class="muted">© <span id="year"></span> Your Gram Panchayat. All rights reserved.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#top">Back to top</a>
+          <a href="#" aria-label="Contact us via email">Contact</a>
+          <a href="#" aria-label="Privacy policy">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+      <span id="toastMsg"></span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
